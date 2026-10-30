@@ -1,0 +1,7 @@
+
+faturas/
+gastos_*.pdf
+
+venv/
+__pycache__/
+*.pyc

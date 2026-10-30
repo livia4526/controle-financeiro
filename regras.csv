@@ -1,0 +1,61 @@
+palavra,categoria
+# Cada linha: se a descrição da compra tiver a "palavra", ela vai para a "categoria".
+# A ordem importa: a primeira regra que combinar ganha. Coloque as mais específicas em cima.
+# Maiúsculas, minúsculas e acentos não fazem diferença.
+mp*mp,Gastos normais
+mp*livia,Gastos normais
+mercado livre,Pessoais
+uber *one,Assinaturas
+kindle,Assinaturas
+crunchyroll,Assinaturas
+netflix,Assinaturas
+spotify,Assinaturas
+uber,Uber
+petrox,Petrox
+renegociação,Atraso
+multa por fatura,Atraso
+iof por fatura,Atraso
+juros,Atraso
+multa por atraso,Atraso
+iof do rotativo,Atraso
+ifood,Comida
+subway,Comida
+minimercado,Comida
+fernando,Comida
+g barbosa,Comida
+atacad,Comida
+alimentos,Comida
+supermercado,Comida
+mercado,Comida
+padaria,Comida
+restaurante,Comida
+chau chau,Comida
+lanchonete,Comida
+gol linhas,Viagem
+latam,Viagem
+azul linhas,Viagem
+decolar,Viagem
+hotel,Viagem
+drogasil,Farmácia
+farmácia,Farmácia
+pague menos,Farmácia
+riachuelo,Pessoais
+renner,Pessoais
+c&a,Pessoais
+shein,Pessoais
+bijou,Pessoais
+brinco,Pessoais
+acessorio,Pessoais
+calcado,Pessoais
+sapato,Pessoais
+magazine,Pessoais
+lojas americanas,Pessoais
+americanas,Pessoais
+casas bahia,Pessoais
+havan,Pessoais
+zara,Pessoais
+hering,Pessoais
+marisa,Pessoais
+pernambucanas,Pessoais
+amazon,Pessoais
+pix,Pix
