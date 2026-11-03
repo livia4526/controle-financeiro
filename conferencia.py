@@ -16,7 +16,7 @@ def ler_valor_digitado(texto: str) -> float | None:
     limpo = texto.strip().replace("R$", "").replace(" ", "")
     if not limpo:
         return None
-    if re.fullmatch(r"\d+\.\d{1,2}", limpo):  # 724.85: ponto como vírgula decimal
+    if re.fullmatch(r"\d+\.\d{1,2}", limpo):  # ponto como vírgula decimal
         return float(limpo)
     return float(limpo.replace(".", "").replace(",", "."))
 
