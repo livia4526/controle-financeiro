@@ -48,7 +48,7 @@ def tabela(linhas, larguras, total=False, direita_desde=1):
         ("TOPPADDING", (0, 0), (-1, -1), 4),
         ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
     ]
-    if total:  # última linha em negrito, com linha em cima
+    if total:  
         estilo += [
             ("FONTNAME", (0, -1), (-1, -1), "Helvetica-Bold"),
             ("LINEABOVE", (0, -1), (-1, -1), 1, AZUL),
@@ -134,7 +134,7 @@ def gerar_pdf(caminho, titulo_mes, lancamentos, bancos, conferencias=None):
     gastos = [l for l in lancamentos if eh_gasto(l)]
     partes = [Paragraph("Controle de gastos", TITULO), Paragraph(titulo_mes, SUBTITULO), Spacer(1, 14)]
 
-    # ===== Página 1: resumo geral =====
+    # ===== resumo geral =====
     total_geral = sum(l["valor"] for l in gastos)
     partes.append(Paragraph(f"Total gasto nos cartões: <b>{reais(total_geral)}</b>", DESTAQUE))
     por_banco = defaultdict(float)
@@ -176,7 +176,7 @@ def gerar_pdf(caminho, titulo_mes, lancamentos, bancos, conferencias=None):
         linhas.append(["Total que ainda vem", "", "", "", reais(falta_total)])
         partes.append(tabela(linhas, [5.5 * cm, 3 * cm, 2 * cm, 3 * cm, 3.5 * cm], total=True, direita_desde=2))
 
-    # ===== Uma página por banco =====
+    # ===== uma página por banco =====
     for banco in bancos:
         do_banco = [l for l in lancamentos if l["banco"] == banco]
         gastos_banco = [l for l in do_banco if eh_gasto(l)]
@@ -200,7 +200,7 @@ def gerar_pdf(caminho, titulo_mes, lancamentos, bancos, conferencias=None):
         # Movimentação: saldo anterior e pagamentos (não são gastos, mas mudam o valor da fatura)
         anterior = sum(l["valor"] for l in do_banco if l["categoria"] == SALDO_ANTERIOR)
         pagos = sum(l["valor"] for l in do_banco if l["categoria"] == PAGAMENTO)
-        # Se você informou o valor real da fatura, este quadro não é necessário (e só confundiria)
+        # Se você informou o valor real da fatura, este quadro não é necessário 
         if (anterior or pagos) and not conf:
             partes.append(Paragraph("Movimentação da fatura", SECAO))
             linhas = [["", "Valor"],
