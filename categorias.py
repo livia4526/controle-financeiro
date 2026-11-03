@@ -40,7 +40,7 @@ def nome_da_loja(descricao: str) -> str:
     nome = " ".join(palavras[:3])
     if nome.isupper() or nome.islower() or nome[:1].islower():
         nome = nome.title()
-    return nome[:22].strip() or "Outros"  # nomes curtos, para o relatório ficar limpo
+    return nome[:22].strip() or "Outros"  # nomes curtos
 
 
 def classificar(lancamento: dict, regras: list[tuple[str, str]]) -> tuple[str, bool]:
@@ -57,7 +57,7 @@ def classificar(lancamento: dict, regras: list[tuple[str, str]]) -> tuple[str, b
     if "mercado" in sem_acento(lancamento.get("dica", "")):
         return "Comida", True
     # Sem regra: vai para Comida, que é o gasto mais comum (nome de pessoa sem Pix,
-    # restaurante novo...). O PDF lista essas lojas no final para você conferir.
+    # restaurante novo...). O PDF lista essas lojas no final para vc conferir.
     return CATEGORIA_PADRAO, False
 
 
